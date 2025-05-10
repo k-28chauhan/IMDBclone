@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search</title>
+    <link rel="stylesheet" href="output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
+
+<body style="font-family: poppins;" class="flex flex-col justify-center items-center bg-black">
+    <header class="bg-zinc-900 w-full flex justify-between items-center p-4 ">
+        <a href="">
+            <h1 class="text-3xl text-white">SearchAI</h1>
+        </a>
+        <div class="hidden lg:w-72 lg:flex text-white text-2xl justify-around items-center">
+            <div class="cursor-pointer delay-100 hover:text-cyan-600">Movies</div>
+            <div class="cursor-pointer delay-100 hover:text-cyan-600">TV</div>
+            <div class="cursor-pointer delay-100 hover:text-cyan-600">Genres</div>
+        </div>
+        <div class="relative md:flex hidden">
+            <input id="search" class="focus:outline-none w-48 md:w-72 lg:w-full p-1 pr-10 border-none text-2xl bg-white" type="text"
+                placeholder="Enter movie/tv name">
+            <img class="cursor-pointer absolute size-7 right-1 top-1.5" src="images/search.png" alt="">
+        </div>
+        <div class="flex justify-center gap-8 mr-4 w-72">
+            <button class="text-white text-2xl">WatchList</button>
+            <button class="text-white text-2xl">Sign In</button>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-7 lg:hidden">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+        </div>
+    </header>
+    <main id="main" class="w-full max-w-[500px] sm:max-w-[768px] lg:max-w-[1100px] mx-auto px-4 mt-12">
+        <div id="error"></div>
+        <div class="carousel-container mb-8">
+            <div class="text-white text-3xl mb-5 ">
+                <span class="text-yellow-400 font-extrabold">|</span> Trending Today
+                <span class="text-lg text-zinc-300">Movies</span>
+            </div>
+            <div class="swiper mySwiper ">
+                <div class="swiper-wrapper" id="trending-movies">
+                    <!-- Slides injected dynamically -->
+                </div>
+                <div class="swiper-button-next bg-black opacity-50 text-white w-10 h-16 hover:opacity-70"></div>
+                <div class="swiper-button-prev bg-black opacity-50 text-white w-10 h-16 hover:opacity-70"></div>
+            </div>
+        </div>
+
+        <div class="carousel-container mb-8">
+            <div class="text-white text-3xl mb-5 ">
+                <span class="text-yellow-400 font-extrabold">|</span> Trending Today
+                <span class="text-lg text-zinc-300">TV Shows</span>
+            </div>
+            <div class="swiper mySwiper overflow-hidden">
+                <div class="swiper-wrapper" id="trending-shows">
+                    <!-- Slides injected dynamically -->
+                </div>
+                <div class="swiper-button-next bg-black opacity-50 text-white w-10 h-16 hover:opacity-70"></div>
+                <div class="swiper-button-prev bg-black opacity-50 text-white w-10 h-16 hover:opacity-70"></div>
+            </div>
+        </div>
+        <div id="movie-container" class=" grid grid-cols-5 gap-8">
+        </div>
+        <div id="trailer-modal"
+            class="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center hidden z-[999]">
+            <div class="bg-zinc-900 p-8 rounded-xl relative max-w-4xl w-full">
+                <button onclick="closeModal()" class="absolute top-2 right-2 text-white text-3xl">&times;</button>
+                <div id="modal-content">
+                    <!-- Trailers will be loaded here dynamically -->
+                </div>
+            </div>
+        </div>
+        <div id="watch-options"
+            class="fixed text-white inset-0 bg-black bg-opacity-75 flex justify-center items-center hidden z-50">
+            <div class="bg-zinc-900 p-8 rounded-xl relative max-w-80  lg:max-w-2xl w-full">
+                <button onclick="closeModal()" class="absolute top-2 right-2 text-white text-3xl">&times;</button>
+                <div id="modal-content1" class="max-h-[505px] overflow-auto">   
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <script src="search.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</body>
+
+</html>
