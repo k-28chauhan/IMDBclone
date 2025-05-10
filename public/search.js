@@ -107,7 +107,7 @@ async function watchOptions(id, type) {
              <div class="flex gap-3 h-28">
                  <div><img class="h-28 w-20" src="${IMAGE_URL + details.poster_path}"></div>
                  <div class="text-stone-400">
-                     <div class="text-3xl text-white">${details.title || details.name}</div>
+                     <div class="text-2xl text-white">${details.title || details.name}</div>
                      <div>${(details.first_air_date || details.release_date)?.substring(0,4)} • ${runTimeHour}hr ${runTimeMinutes}min</div>
                      <div>Drama</div>
                      <div class="flex gap-2">
@@ -125,11 +125,11 @@ async function watchOptions(id, type) {
                  <div class="font-bold">Director</div>
                  <div class="text-blue-500"><span>${director}</span></div>
              </div>
-             <div class="flex flex-col gap-2 justify-around mt-5">
+             <div class="flex flex-col md:flex-row gap-2 justify-around mt-5">
                  <div>
                      <button onclick="showTrailer(${id}, '${type}')"
                          class="flex justify-center
-                         gap-2 w-60 lg:w-72 text-xl bg-zinc-700 rounded-2xl px-2 py-1 text-blue-400 transition delay-50 hover:bg-zinc-800">
+                         gap-2 w-60 md:w-72 text-xl bg-zinc-700 rounded-2xl px-2 py-1 text-blue-400 transition delay-50 hover:bg-zinc-800">
                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                              class="size-6 pt-0.5">
                              <path fill-rule="evenodd"
@@ -141,7 +141,7 @@ async function watchOptions(id, type) {
                  </div>
                  <div>
                      <button
-                         class="w-60 lg:w-72 text-xl bg-zinc-700 rounded-2xl px-2 py-1 text-blue-400 transition delay-50 hover:bg-zinc-800">
+                         class="w-60 md:w-72 text-xl bg-zinc-700 rounded-2xl px-2 py-1 text-blue-400 transition delay-50 hover:bg-zinc-800">
                          <span class="font-bold">+</span> Watchlist
                      </button>
                  </div>
@@ -194,7 +194,7 @@ async function trendingShows() {
                     </svg>
                 </div>
                 <div class="flex justify-between mt-2 w-32 lg:w-48">
-                    <div class="pl-3 py-1 text-lg lg:text-xl w-60 h-16 line-clamp-2">${movie.name}</div>
+                    <div class="pl-3 py-1 text-lg lg:text-xl w-52 h-16 line-clamp-2">${movie.name}</div>
                     <div class="flex w-20 py-2 mr-1 gap-1">
                         <img class="mt-1 size-4" src="images/star.png" alt="">
                         <span class=" text-xl text-gray-400">${movie.vote_average.toFixed(1)}</span>
